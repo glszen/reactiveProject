@@ -1,5 +1,5 @@
 .background {
-  background-image: url(./images/hero-man.jpg);
+  background-image: url(../public/images/hero-man.jpg);
   background-repeat: no-repeat;
   background-size: cover;
 }
