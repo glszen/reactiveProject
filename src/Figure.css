@@ -1,0 +1,97 @@
+.trainercontainer {
+    position: relative; /* Kenarlıkların doğru şekilde konumlanabilmesi için */
+    width: 100%;
+    max-width: 300px;
+    padding: 10px;
+    margin: 10px;
+    transition: all 0.3s ease; /* Geçiş animasyonları */
+  }
+  
+  /* Üst Kenar */
+  .trainercontainer .top-border {
+    content: '';
+    position: absolute;
+    top: 1%;
+    left: 54%;
+    width: 30%;
+    height: 8px;
+    background-color: #355592;
+    transform: translateX(-50%);
+    transition: all 0.3s ease;
+  }
+  
+  /* Alt Kenar */
+  .trainercontainer .bottom-border {
+    content: '';
+    position: absolute;
+    bottom: 1%;
+    left: 54%;
+    width: 30%;
+    height: 8px;
+    background-color: #355592;
+    transform: translateX(-50%);
+    transition: all 0.3s ease;
+  }
+  
+  /* Sol Kenar */
+  .trainercontainer .left-border {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 1%;
+    width: 8px;
+    height: 40%;
+    background-color: #355592;
+    transform: translateY(-50%);
+    transition: all 0.3s ease;
+  }
+  
+  /* Sağ Kenar */
+  .trainercontainer .right-border {
+    content: '';
+    position: absolute;
+    top: 50%;
+    display: flex;
+    right:-2vh;
+    width: 8px;
+    height: 40%;
+    background-color: #355592;
+    transform: translateY(-50%);
+    transition: all 0.3s ease;
+  }
+  
+  /* Hover ile kenarlıkların genişlemesi */
+  .trainercontainer:hover .bottom-border {
+    width: 80%; /* Sadece alt çizgi için geçerli olmalı. */
+  }
+  
+  .trainercontainer:hover .left-border,
+  .trainercontainer:hover .right-border {
+    height: 80%; /* Sol ve sağ kenarlar daha uzun olacak */
+  }
+  
+  .trainercontainer:hover .overlay {
+    opacity: 1; /* Hover ile overlay görünür hale gelir */
+    outline: 10px solid #355592; /* Kenarlık dışarıda görünür olacak */
+  }
+  
+  /* Overlay stil */
+  .overlay {
+    position: absolute;
+    bottom: 25px; /* Kutu altına yerleşmesini sağla */
+    left: 30px; /* Sol tarafa biraz boşluk bırak */
+    right: 5px; /* Sağ tarafa biraz boşluk bırak */
+    background: #355592; /* Arka plan rengi */
+    color: #f1f1f1; 
+    height: 100px; /* Overlay yüksekliği */
+    transition: opacity 0.5s ease, outline 0.5s ease; /* Opacity ve kenarlık geçişi */
+    opacity: 0; /* Başlangıçta görünmez */
+    font-size: 20px;
+    padding: 32px;
+    clip-path: polygon(0 9vh, 9vh 9vh, 9vh 0, calc(100% - 9vh) 0, calc(100% - 9vh) 9vh, 100% 9vh, 100% calc(100% - 9vh), calc(100% - 9vh) calc(100% - 9vh), calc(100% - 9vh) 100%, 9vh 100%, 9vh calc(100% - 9vh), 0 calc(100% - 9vh)); /* Kesik şekil */
+    text-align: center;
+    z-index: 1; /* Overlay'in üstte olması için */
+    outline: 10px solid transparent; /* Başlangıçta şeffaf kenarlık */
+  }
+  
+  
